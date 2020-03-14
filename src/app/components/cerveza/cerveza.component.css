@@ -1,0 +1,10 @@
+.ficha {
+    border: 1px solid black;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.ficha p {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center
+}

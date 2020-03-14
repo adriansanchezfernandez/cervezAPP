@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <h1>RESULTADOS DE {{id}}</h1>
+
+        <div class=" col-12 ">
+            <table class="table ">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>IMG</th>
+                        <th>NOMBRE</th>
+                        <th>GRADUCACION</th>
+                        <th>TIPO</th>
+                        <th class="text-right"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cerveza of cervezas;let i=index">
+                        <td><img [src]="cerveza.imagen" style="max-width:50px"></td>
+                        <td>{{cerveza.nombre}}</td>
+                        <td>{{cerveza.graduacion}}</td>
+                        <td>{{cerveza.tipo}}</td>
+                        <td class="text-right">
+                            <a [routerLink]="['/cerveza',cerveza.id]"><i class="fa fa-eye" aria-hidden="true"></i></a>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>

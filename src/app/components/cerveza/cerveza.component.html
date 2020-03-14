@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mt-4 justify-content-center">
+
+
+        <div class="col-md-6 d-flex justify-content-center ficha">
+            <div class="text-center">
+                <h1>{{cerveza.nombre}}</h1>
+                <img [src]="cerveza.imagen" class="img-fluid" style="max-width:350px">
+                <h6 class="mt-2">GRADUACION : {{cerveza.graduacion}} ºC - {{cerveza.tipo}}</h6>
+
+                <p>{{cerveza.descripcion}}</p>
+                <button class="btn btn-block btn-outline-danger" routerLink="/cervezas">Volver</button>
+            </div>
+        </div>
+    </div>
+</div>

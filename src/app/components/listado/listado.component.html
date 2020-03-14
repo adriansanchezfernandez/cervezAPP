@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <h1>LISTADO</h1>
+        <div class="col-12 text-right">
+            <button class="btn-outline-success btn btn-sm text-right my-2" [routerLink]="['/formulario','nuevo']">Agregar nuevo</button>
+        </div>
+        <div class=" col-12 ">
+            <table class="table ">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>IMAGEN</th>
+                        <th>NOMBRE</th>
+                        <th>GRADUCACION</th>
+                        <th>TIPO</th>
+                        <th class="text-right">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cerveza of cervezas;let i=index">
+                        <td><img [src]="cerveza.imagen" style="max-width:30px"></td>
+                        <td>{{cerveza.nombre}}</td>
+                        <td>{{cerveza.graduacion}}</td>
+                        <td>{{cerveza.tipo}}</td>
+                        <td class="text-right">
+                            <a [routerLink]="['/cerveza',cerveza.id]" class="mr-4"><i class="fa fa-eye text-info" aria-hidden="true"></i></a>
+                            <a [routerLink]="['/formulario',cerveza.id]"><i class="fa fa-pencil text-primary mr-3" aria-hidden="true"></i></a>
+                            <a (click)="borrar(cerveza.id, i)"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+</div>

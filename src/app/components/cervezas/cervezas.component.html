@@ -1,0 +1,40 @@
+<div class="container-fluid">
+
+    <div class="row d-flex justify-content-around">
+        <div class="col-md-2 ficha" *ngFor="let cerveza of cervezas">
+            <h6>{{cerveza.nombre|uppercase}}</h6>
+            <div class="row">
+
+                <div class="col-6">
+
+                    <p>{{cerveza.pais|uppercase}}<br> {{cerveza.graduacion}} ºC</p>
+                </div>
+                <div class="col-6 mb-3">
+                    <img [src]="cerveza.imagen" class="img-fluid"> </div>
+                <a class=" btn-sm btn btn-outline-dark btn-block" [routerLink]=" [ '/cerveza',cerveza.id] ">VER MÁS</a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-6 ">
+
+            <table class="table ">
+                <thead class="text-white bg-dark">
+                    <tr>
+                        <th></th>
+                        <th>NOMBRE</th>
+                        <th>GRADUACION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grad of graduadas; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{grad.nombre}}</td>
+                        <td>{{grad.graduacion}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
