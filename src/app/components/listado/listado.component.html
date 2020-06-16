@@ -10,17 +10,19 @@
                     <tr>
                         <th>IMAGEN</th>
                         <th>NOMBRE</th>
-                        <th>GRADUCACION</th>
+                        <th>GRADUACION</th>
                         <th>TIPO</th>
+                        <th>PAIS</th>
                         <th class="text-right">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let cerveza of cervezas;let i=index">
                         <td><img [src]="cerveza.imagen" style="max-width:30px"></td>
-                        <td>{{cerveza.nombre}}</td>
+                        <td>{{cerveza.nombre|uppercase}}</td>
                         <td>{{cerveza.graduacion}}</td>
                         <td>{{cerveza.tipo}}</td>
+                        <td>{{cerveza.pais|uppercase}}</td>
                         <td class="text-right">
                             <a [routerLink]="['/cerveza',cerveza.id]" class="mr-4"><i class="fa fa-eye text-info" aria-hidden="true"></i></a>
                             <a [routerLink]="['/formulario',cerveza.id]"><i class="fa fa-pencil text-primary mr-3" aria-hidden="true"></i></a>

@@ -7,6 +7,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { CervezaComponent } from './components/cerveza/cerveza.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -16,8 +17,8 @@ const routes: Routes = [
   { path: 'cervezas', component: CervezasComponent },
   { path: 'cerveza/:id', component: CervezaComponent },
   { path: 'buscador/:term', component: BuscadorComponent },
-  { path: 'formulario/:id', component: FormularioComponent },
-  { path: 'listado', component: ListadoComponent },
+  { path: 'formulario/:id', component: FormularioComponent, canActivate:[AuthGuard] },
+  { path: 'listado', component: ListadoComponent,canActivate:[AuthGuard] },
   { path: '**', component: HomeComponent },
 ];
 

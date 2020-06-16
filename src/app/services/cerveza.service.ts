@@ -10,13 +10,13 @@ import { map } from 'rxjs/operators'
 export class CervezaService {
   cerveza: Cerveza[] = [];
 
-  cervezas:Cerveza[]=[]
+  cervezas: Cerveza[] = []
 
   url = 'https://cervezas-80541.firebaseio.com/'
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
-    this.getCervezas().subscribe(resp=>{
-      this.cervezas=resp;
+    this.getCervezas().subscribe(resp => {
+      this.cervezas = resp;
     })
   }
 
@@ -63,15 +63,15 @@ export class CervezaService {
   }
 
   buscarCerveza(term) {
-term=term.toLowerCase()
-    let cervArr:Cerveza[] = [];
+    term = term.toLowerCase()
+    let cervArr: Cerveza[] = [];
 
 
-    for (let i = 0; i < this.cervezas.length; i++){
+    for (let i = 0; i < this.cervezas.length; i++) {
       if (this.cervezas[i].nombre.toLowerCase().indexOf(term) >= 0) {
         cervArr.push(this.cervezas[i])
-      } 
-  
+      }
+
     }
     console.log(cervArr, 'cervezasArr')
     return cervArr
